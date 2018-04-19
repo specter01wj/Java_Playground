@@ -18,18 +18,21 @@ public class Remove_Duplicates_from_Sorted_Array {
         // TODO code application logic here
         int[] input = {1,1,1,1,2,3,3};
         System.out.println("O input: " + Arrays.toString(input));
-        int[] output = removeDuplicates(input);
-        System.out.println("input: " + Arrays.toString(input) + "\noutput: " + Arrays.toString(output));
+        int[][] output = removeDuplicates(input);
+        System.out.println("input: " + Arrays.toString(input) + 
+                "\noutput array: " + Arrays.toString(output[1]) +
+                "\noutput index: " + (output[0][0]) );
     }
     
     /*
      * @param nums: An ineger array
      * @return: An integer
      */
-    public static int[] removeDuplicates(int[] nums) {
+    public static int[][] removeDuplicates(int[] nums) {
         //if(nums.length == 0) return 0;
 
         int index = 1;
+        int[][] res = new int[2][1];
         
         for(int i = 1; i < nums.length; i++) {
             if(nums[i] != nums[index - 1]) {
@@ -37,10 +40,10 @@ public class Remove_Duplicates_from_Sorted_Array {
             }
         }
         
-        nums = Arrays.copyOfRange(nums, 0, index);
-        
+        res[1] = Arrays.copyOfRange(nums, 0, index);
+        res[0][0] = index;
         //return index;
-        return nums;
+        return res;
 
     }
     
