@@ -16,8 +16,6 @@ symlinks
 .classpath
 .project
 .settings
-build.xml
-manifest.mf
 
 # Ignore Visual Studio  Project #
 ###################
